@@ -1,0 +1,292 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #4B3621;
+  color: white;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header */
+header {
+  background-color: #3a2c1e;
+  padding: 20px;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 100px 40px;
+  background: #cdb89c;
+  color: #2e1c12;
+  animation: fadeIn 2s ease;
+  text-align: center;
+}
+
+.main img {
+  flex: 1 1 300px;
+  max-width: 350px;
+  transition: transform 0.6s ease;
+}
+
+.main img:hover {
+  transform: scale(1.1);
+}
+
+.heading {
+  flex: 1 1 400px;
+  font-size: 28px;
+  max-width: 600px;
+  text-align: left;
+}
+
+/* Product Section */
+.main2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  background: #a88a66;
+}
+
+.main2 > div {
+  background: #6b4f3b;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main2 img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.main2 button {
+  background: #3e2a1f;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.main2 button:hover {
+  background: #2a1c14;
+}
+
+/* About Section */
+.kid {
+  background: #7a5a44;
+  text-align: center;
+  border-radius: 15px;
+  margin: 20px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: white;
+}
+
+/* Info Section */
+.main3 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #6b4f3b;
+  color: white;
+  padding: 60px 40px;
+  gap: 60px;
+}
+
+.kid1, .kid9 {
+  flex: 1 1 400px;
+  padding: 20px;
+  background: #5a3e36;
+  border-radius: 10px;
+}
+
+/* Image and Text */
+.main4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  background: #6b4f3b;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 60px 40px;
+  margin: 40px 20px;
+  border-radius: 15px;
+}
+
+.main4 img {
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease;
+}
+
+.main4 img:hover {
+  transform: scale(1.05);
+}
+
+.kid2 {
+  flex: 1 1 400px;
+}
+
+/* Footer */
+footer {
+  background-color: #3a2c1e;
+  color: #ccc;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 40px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .font marquee {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    padding: 10px 15px;
+  }
+
+  .main {
+    flex-direction: column;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .main img {
+    max-width: 90%;
+  }
+
+  .heading {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .main2 {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .main2 > div {
+    padding: 15px;
+  }
+
+  .main3 {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .main4 {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .main4 img {
+    max-width: 90%;
+  }
+
+  footer {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 8px 20px;
+  }
+
+  .main2 button {
+    padding: 10px 0;
+  }
+}

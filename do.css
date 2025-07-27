@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #000000;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #000010, #000000);
+  opacity: 0.95;
+  z-index: 0;
+}
+
+.update-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+
+.ring-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 40px auto;
+}
+
+.loader-ring {
+  width: 100%;
+  height: 100%;
+  border: 10px solid transparent;
+  border-top: 10px solid #00ffff;
+  border-radius: 50%;
+  animation: spin 2s linear infinite, glow 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 30px #00ffffaa;
+}
+
+.percent-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 12px #00ffff;
+}
+
+.status-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #cccccc;
+  text-shadow: 0 0 10px #222;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 15px #00ffff33; }
+  to { box-shadow: 0 0 35px #00ffffcc; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .ring-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .percent-text {
+    font-size: 24px;
+  }
+
+  .status-text {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADD CART</title>
+  <style>
+
+    body{
+      background-color: #E2E2E2;
+    }
+    .main{
+      box-shadow: 0px 10px 15px rgba(0,0,0,0.9);
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <section style="max-width: 800px; margin: 40px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; font-family: Arial, sans-serif;">
+  <div  style="display: flex; flex-wrap: wrap; gap: 30px;" class="main">
+   
+    <div style="flex: 1 1 300px;">
+      <img src="logo.jpeg" alt="AS V10 Cricket Bat" style="width: 100%; border-radius: 8px;">
+    </div>
+
+    <div style="flex: 1 1 400px;">
+      <h2 style="margin-bottom: 10px;">AS V10 English Willow Cricket Bat</h2>
+      <p style="color: #777; margin-bottom: 15px;">Premium Grade 1 English Willow | Lightweight | Extended Sweet Spot</p>
+      <p style="font-size: 22px; font-weight: bold; color: #2E2E2E;">$249.99</p>
+
+    
+      <label for="weight" style="display: block; margin-top: 20px;">Choose Weight:</label>
+      <select id="weight" style="padding: 8px; width: 100%; margin-top: 5px;">
+        <option>2.7 lbs</option>
+        <option>2.8 lbs</option>
+        <option>2.9 lbs</option>
+        <option>2.10 lbs</option>
+      </select>
+
+      <label for="quantity" style="display: block; margin-top: 20px;">Quantity:</label>
+      <input type="number" id="quantity" value="1" min="1" style="padding: 8px; width: 95%; margin-top: 5px;">
+
+
+      <button onclick="addToCart()" style="margin-top: 25px; padding: 12px 20px; background-color: #2E2E2E; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+        🛒 Add to Cart
+      </button>
+
+    
+      <p id="cartMessage" style="margin-top: 15px; color: green;"></p>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  function addToCart() {
+    const weight = document.getElementById('weight').value;
+    const quantity = document.getElementById('quantity').value;
+    const message = `Added ${quantity} x AS V10 Bat (${weight}) to your cart.`;
+    document.getElementById('cartMessage').textContent = message;
+  }
+</script> 
+
+</body>
+</html>

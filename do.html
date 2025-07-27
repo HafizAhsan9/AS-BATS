@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>System Updating</title>
+  <link rel="stylesheet" href="do.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="update-container">
+    <div class="ring-container">
+      <div class="loader-ring"></div>
+      <div class="percent-text" id="percent">0%</div>
+    </div>
+    <p class="status-text" id="status">Installing updates<span id="dots"></span><br>Don't turn off your computer</p>
+  </div>
+
+  <script>
+    let percent = 0;
+    const percentText = document.getElementById('percent');
+    const dots = document.getElementById('dots');
+    const status = document.getElementById('status');
+    let dotCount = 0;
+
+    function updateProgress() {
+      if (percent < 100) {
+        percent += 1;
+        percentText.innerText = percent + "%";
+        setTimeout(updateProgress, 100);
+      } else {
+        percentText.innerText = "Complete!";
+        status.innerHTML = "Finalizing updates...<br>Please wait";
+      }
+    }
+
+    function animateDots() {
+      dotCount = (dotCount + 1) % 4;
+      dots.innerText = ".".repeat(dotCount);
+      setTimeout(animateDots, 500);
+    }
+
+    updateProgress();
+    animateDots();
+  </script>
+</body>
+</html>
